@@ -74,7 +74,7 @@ def sparse_categorical_crossentropy(y_true, y_pred):
 
 
 def binary_crossentropy(y_true, y_pred):
-    return K.mean(K.binary_crossentropy(y_true, y_pred), axis=-1)
+    return K.mean(K.binary_crossentropy(y_true, K.cast(y_pred,dtype='float32')), axis=-1)
 
 
 def kullback_leibler_divergence(y_true, y_pred):
